@@ -2,13 +2,13 @@
 <testCase>
   <summary/>
   <steps>
-    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="1" title="Set Values: EnvVar">
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="1" title="Set Values: EnvVari">
       <arguments>
         <argument id="values">
           <value class="valueList" mutable="Mutable">
             <namedValues mutable="Mutable">
               <namedValue name="valuePath">
-                <value class="value" valueClass="string">EnvVar</value>
+                <value class="value" valueClass="string">EnvVari</value>
               </namedValue>
               <namedValue name="value">
                 <value class="funcCall" id="GetSelectedEnvironment"/>
