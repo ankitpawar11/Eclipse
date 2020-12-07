@@ -39,22 +39,37 @@ public class BinarySearchIterative {
 	}
 
 	static int effSortedArrayFun(int arr[], int x) {
-		int n=arr.length;
-		int low=0, high=n-1;
+		int n = arr.length;
+		int low = 0, high = n - 1;
+
+		while (low <= high) {
+			int mid = (low + high) / 2;
+			if (arr[mid] == x) {
+				return mid;
+			} else if (arr[mid] < x) {
+				low = mid + 1;
+			} else {
+				high = mid - 1;
+			}
+		}
+		return -1;
+
+	}
+
+	static int recurciveBinarySearchFUn(int arr[], int low, int high, int x) {
 		
-		while(low<=high) {
+			if(low>high) {
+				return -1;
+			}
 			int mid=(low+high)/2;
 			if(arr[mid]==x) {
 				return mid;
 			}
-			else if(arr[mid]<x) {
-				low=mid+1;
+			else if(arr[mid]>x){
+				return recurciveBinarySearchFUn(arr, low, mid-1, x);
 			}
-			else {
-				high=mid-1;
-			}
-		}
-		return -1;
+			else
+				return recurciveBinarySearchFUn(arr, mid+1, high, x);
 
 	}
 
@@ -64,6 +79,7 @@ public class BinarySearchIterative {
 		System.out.println(naiveFun(arr, 21));
 		System.out.println(naiveSortedArrayFun(sarr, 4));
 		System.out.println(effSortedArrayFun(sarr, 4));
+		System.out.println(recurciveBinarySearchFUn(sarr, 0, 5, 2));
 
 	}
 
